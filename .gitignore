@@ -1,6 +1,17 @@
-target/
-.mvn/
-mvnw*
+# Package Files #
+*.jar
+*.war
+*.ear
+*.tar.gz
+*.rar
+*.cmd
+*.classpath
+*.settings
+*.project
+*.mvn
+mvnw
+target
+*.DS_Store
 
 ### STS ###
 .apt_generated
