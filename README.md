@@ -36,7 +36,7 @@ BMO_QRCODE_DATASOURCE_PASSWORD=<database-password>
 
 ## Issues
 
-You can create or track the issues [here](https://github.com/TMMOB-BMO/bmo-qr-code-generator/issues). Also, you can vote
+You can create or track the issues [here](https://github.com/TMMOB-BMO/identity-card-qr-code-generator/issues). Also, you can vote
 for the issues that you want to be tackled soon.
 
 ## Hint
