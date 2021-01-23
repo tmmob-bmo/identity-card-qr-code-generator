@@ -23,7 +23,6 @@ public class QRService {
 
     private static final String TCKN = "tckn";
     private static final String SICIL = "sicil";
-    private static final String DOT = ".";
     private static final int WIDTH = 150;
     private static final int HEIGHT = 150;
 
@@ -33,7 +32,7 @@ public class QRService {
 
     public QRService(JdbcTemplate jdbcTemplate, @Value("${qr-code-path}") String qrCodeExportPath) {
         this.jdbcTemplate = jdbcTemplate;
-        this.qrCodeFileName = qrCodeExportPath + "%s." + ImageType.JPG.name();
+        this.qrCodeFileName = qrCodeExportPath + "%s." + ImageType.PNG.name();
     }
 
     public ByteArrayOutputStream generateOne(String identityNumber) {
@@ -50,7 +49,7 @@ public class QRService {
             // generating the QR code
             outputStream = QRCode.from(memberInformation.toString())
                     .withSize(WIDTH, HEIGHT)
-                    .to(ImageType.JPG)
+                    .to(ImageType.PNG)
                     .stream();
 
             LOG.info("QR Code generated for {}.", registrationNumber);
@@ -82,7 +81,7 @@ public class QRService {
             // generating the QR code
             QRCode.from(memberInformation.toString())
                     .withSize(WIDTH, HEIGHT)
-                    .to(ImageType.JPG)
+                    .to(ImageType.PNG)
                     .stream()
                     .writeTo(outputStream);
 
