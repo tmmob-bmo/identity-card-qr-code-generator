@@ -19,12 +19,12 @@ public class QRGeneratorController {
         this.qrGeneratorService = qrGeneratorService;
     }
 
-    @GetMapping(produces = MediaType.IMAGE_JPEG_VALUE)
+    @GetMapping(produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<byte[]> printQrCode(@RequestParam(value = "tckn") String identityNumber) {
 
         ByteArrayOutputStream qrOutputStream = qrGeneratorService.generateOne(identityNumber);
         byte[] qrCodeBytes = qrOutputStream.toByteArray();
-        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(qrCodeBytes);
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(qrCodeBytes);
     }
 
     @GetMapping("/all")
